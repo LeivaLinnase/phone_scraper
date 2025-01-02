@@ -1,6 +1,4 @@
 import subprocess
-import schedule
-import time
 from merge_clean_upload import merge_and_clean_csv_files, upload_to_google_sheets
 
 # Define the directory paths and Google Sheet name
