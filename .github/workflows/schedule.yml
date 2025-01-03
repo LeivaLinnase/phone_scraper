@@ -24,6 +24,10 @@ jobs:
       - name: Activate Virtual Environment
         run: |
           source venv/bin/activate
+      
+      - name: Verify Virtual Environment
+        run: |
+          python -c "import sys; print(sys.prefix)"
 
       - name: Install dependencies
         run: |
