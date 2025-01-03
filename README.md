@@ -36,10 +36,10 @@ This project automates the collection of iPhone sales listings data from local r
 ### Pipeline Workflow
 The workflow is automated using GitHub Actions and runs as follows:
 1. **Scrape data**
-   - **`elisa.py`**: Scrapes data about iPhones on sale from _**Elisa**_ and stores it into csv.
-   - **`euronics.py`**: Scrapes data about iPhones on sale from _**Euronics**_ and stores it into csv.
-   - **`klick.py`**: Scrapes data about iPhones on sale from _**Klick**_ and stores it into csv.
-   - **`onoff.py`**: Scrapes data about iPhones on sale from _**OnOff**_ and stores it into csv.
+   - **`elisa.py`**: Scrapes iPhone sales data from _**Elisa**_ and stores it into csv.
+   - **`euronics.py`**: Scrapes iPhone sales data from _**Euronics**_ and stores it into csv.
+   - **`klick.py`**: Scrapes iPhone sales data from _**Klick**_ and stores it into csv.
+   - **`onoff.py`**: Scrapes iPhone sales data from _**OnOff**_ and stores it into csv.
 2. **Merge, clean and upload data**
    -  **`merge_clean_upload.py`**: 
       - Merges all the scraped CSVs into a single dataset, named with the current date. 
