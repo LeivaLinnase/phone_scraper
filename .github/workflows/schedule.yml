@@ -30,7 +30,7 @@ jobs:
       - name: Verify Installed Packages
         run: |
           source venv/bin/activate
-          pip list  # List installed packages to verify googleapiclient is installed.
+          pip list  
 
       - name: Verify Virtual Environment
         run: |
