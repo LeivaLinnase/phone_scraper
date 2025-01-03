@@ -27,6 +27,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Verify Installed Packages
+        run: |
+          source venv/bin/activate
+          pip list  # List installed packages to verify googleapiclient is installed.
+
       - name: Verify Virtual Environment
         run: |
           source venv/bin/activate
@@ -52,3 +57,4 @@ jobs:
 
       - name: Clean up credentials file
         run: rm service_account.json
+
