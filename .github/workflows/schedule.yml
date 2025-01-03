@@ -21,23 +21,21 @@ jobs:
         run: |
           python3 -m venv venv
 
-      - name: Activate Virtual Environment
+      - name: Activate Virtual Environment and Install Dependencies
         run: |
           source venv/bin/activate
-      
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
       - name: Verify Virtual Environment
         run: |
+          source venv/bin/activate
           python -c "import sys; print(sys.prefix)"
 
       - name: Check for googleapiclient (Within Virtual Environment)
         run: |
           source venv/bin/activate
           python -c "import sys; print('googleapiclient' in sys.modules)"
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
 
       - name: Decode and save service account file
         env:
@@ -48,7 +46,9 @@ jobs:
       - name: Run Python script
         env:
           GOOGLE_APPLICATION_CREDENTIALS: service_account.json
-        run: python main.py
+        run: |
+          source venv/bin/activate  # Ensure the virtual environment is activated here as well.
+          python main.py
 
       - name: Clean up credentials file
         run: rm service_account.json
