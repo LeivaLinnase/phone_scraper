@@ -129,7 +129,7 @@ def convert_image_urls_to_images(worksheet):
         rows_with_formulas.append(new_row)
 
     # Update the worksheet with USER_ENTERED mode to interpret formulas correctly
-    worksheet.update('A1', rows_with_formulas, value_input_option='USER_ENTERED')
+    worksheet.update(range_name='A1', values=rows_with_formulas, value_input_option='USER_ENTERED')
     print("Image URLs converted to =IMAGE() formulas.")
 
 
